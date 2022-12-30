@@ -38,7 +38,7 @@ export class AssignmentsService {
 
   
   // url = 'http://localhost:8010/api/assignments';
-  url = 'https://projet-angular.herokuapp.com/api/assignments';
+  url = 'https://projet-angular-back.herokuapp.com/api/assignments';
 
   getAssignements():Observable<Assignement[]> {
     return this.http.get<Assignement[]>(this.url);
