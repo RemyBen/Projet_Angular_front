@@ -11,6 +11,6 @@
     </div>
     <button class="loginBtn" mat-flat-button color="accent" (click)="onLogin()" *ngIf="!isLoggedIn">Connexion</button>
     <button class="loginBtn" mat-flat-button color="accent" (click)="onLogout()" *ngIf="isLoggedIn">Déconnexion</button>
-    <p *ngIf="isLoggedIn">{{user}}</p>
+    <p *ngIf="isLoggedIn">{{ user }}</p>
 </div>
 <router-outlet></router-outlet>

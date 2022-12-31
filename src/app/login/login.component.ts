@@ -34,11 +34,14 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         if (this.form.valid) {
-            if(this.authService.logIn(this.form.value)) {
-                this.wrongCredentials = false;
-            } else {
-                this.wrongCredentials = true;
-            };
+            this.authService.logIn(this.form.value)
+            this.authService.isLoggedIn.subscribe(success => {
+                if(success) {
+                    this.wrongCredentials = false;
+                } else {
+                    this.wrongCredentials = true;
+                }
+            });
         }
         this.formSubmitAttempt = true;
     }

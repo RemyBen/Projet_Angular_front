@@ -13,6 +13,7 @@ export class AuthService {
     }
 
     get userConnected() {
+        console.log("ok");
         return this.user;
     }
 
@@ -21,16 +22,14 @@ export class AuthService {
     ) { }
 
     logIn(user: User) {
-        if (user.username == 'a' && user.password == 'a') {
+        if (user.username == 'user' && user.password == 'user') {
             this.user = user;
             this.loggedIn.next(true);
             this.router.navigate(['/home']);
             console.log("connecté")
-            return true;
         } else {
             this.loggedIn.next(false);
             console.log("erreur");
-            return false;
         }
     }
 
