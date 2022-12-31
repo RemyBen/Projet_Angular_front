@@ -1,9 +1,16 @@
 <div class="container">
 
-    <h1>
-        <nav><a routerLink="/home">{{title}}</a></nav>
-    </h1>
+    <div>
+        <h1>
+            <nav><a routerLink="/home">{{title}}</a></nav>
+        </h1>
 
-    <mat-slide-toggle (click)="login()">Login</mat-slide-toggle>
+        
+        <button mat-flat-button color="primary" (click)="peuplerBD()">Peupler BD</button>
+
+    </div>
+    <button class="loginBtn" mat-flat-button color="accent" (click)="onLogin()" *ngIf="!isLoggedIn">Connexion</button>
+    <button class="loginBtn" mat-flat-button color="accent" (click)="onLogout()" *ngIf="isLoggedIn">Déconnexion</button>
+    <p *ngIf="isLoggedIn">{{user}}</p>
 </div>
 <router-outlet></router-outlet>

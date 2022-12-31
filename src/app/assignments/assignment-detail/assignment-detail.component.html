@@ -7,11 +7,9 @@
         <mat-checkbox *ngIf="!assignementTransmis.rendu" (click)="onAssignementRendu()">Devoir rendu</mat-checkbox>
         <nav>
             <a>
-                <button mat-stroked-button color="primary" (click)="onClickEdit()" [disabled]="!isAdmin()">
-                    Edit
-                </button>
+                <button mat-stroked-button color="primary" (click)="onClickEdit()" [disabled]="!isAdmin()">Modifier</button>
             </a>
         </nav>
-        <button mat-stroked-button color="danger" (click)="delete()">Delete</button>
+        <button mat-stroked-button color="danger" (click)="onDelete()" [disabled]="!isAdmin()">Supprimer</button>
     </div>
 </div>

@@ -1,25 +1,50 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '../models/user.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
-  loggedIn = false;
+    private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    private user: User;
 
-  logIn() {
-    this.loggedIn = true;
-  }
+    get isLoggedIn() {
+        return this.loggedIn.asObservable();
+    }
 
-  logOut() {
-    this.loggedIn = false;
-  }
+    get userConnected() {
+        return this.user;
+    }
 
-  isAdmin() {
-    const isUserAdmin = new Promise(
-      (resolve, reject) => {
-        resolve(this.loggedIn);
-      }
-    )
-    return isUserAdmin;
-  }
+    constructor(
+        private router: Router
+    ) { }
+
+    logIn(user: User) {
+        if (user.username == 'a' && user.password == 'a') {
+            this.user = user;
+            this.loggedIn.next(true);
+            this.router.navigate(['/home']);
+            console.log("connecté")
+            return true;
+        } else {
+            this.loggedIn.next(false);
+            console.log("erreur");
+            return false;
+        }
+    }
+
+    logOut() {
+        this.loggedIn.next(false);
+        this.router.navigate(['/home']);
+    }
+
+    isAdmin() {
+        const isUserAdmin = new Promise(
+            (resolve, reject) => {
+                resolve(this.loggedIn);
+            }
+        )
+        return isUserAdmin;
+    }
 }

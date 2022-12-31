@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter, OnInit, Output } from '@angular/core';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
-import { Assignement } from '../assignements.model';
+import { Assignment } from 'src/app/models/assignment.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class AssignmentDetailComponent implements OnInit {
 
-  assignementTransmis: Assignement;
+  assignementTransmis: Assignment;
 
   constructor(private assignementService: AssignmentsService, private route: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
@@ -19,8 +19,8 @@ export class AssignmentDetailComponent implements OnInit {
     this.getAssignement()
   }
 
-  delete() {
-    this.assignementService.deleteAssignement(this.assignementTransmis).subscribe(message => {
+  onDelete() {
+    this.assignementService.deleteAssignment(this.assignementTransmis).subscribe(message => {
       console.log(message);
       this.router.navigate(['home']);
     })
@@ -29,7 +29,7 @@ export class AssignmentDetailComponent implements OnInit {
 
   onAssignementRendu() {
     this.assignementTransmis.rendu = true;
-    this.assignementService.updateAssignement(this.assignementTransmis).subscribe(message => {
+    this.assignementService.updateAssignment(this.assignementTransmis).subscribe(message => {
       console.log(message);
       this.router.navigate(['home']);
     });
@@ -39,7 +39,7 @@ export class AssignmentDetailComponent implements OnInit {
   getAssignement() {
     const id = +this.route.snapshot.params['id'];
     console.log('id : ', id);
-    this.assignementService.getAssignement(id).subscribe(assignement => {
+    this.assignementService.getAssignment(id).subscribe(assignement => {
       this.assignementTransmis = assignement
       console.log("Res ass detail ", assignement);
     })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
-import { Assignement } from '../assignements.model';
+import { Assignment } from 'src/app/models/assignment.model';
 
 @Component({
   selector: 'app-edit-assignment',
@@ -9,7 +9,7 @@ import { Assignement } from '../assignements.model';
   styleUrls: ['./edit-assignment.component.css'],
 })
 export class EditAssignmentComponent implements OnInit {
-  assignment!: Assignement | undefined;
+  assignment!: Assignment | undefined;
   nomAssignment!: string;
   dateDeRendu!: Date;
 
@@ -30,7 +30,7 @@ export class EditAssignmentComponent implements OnInit {
     // le "+" force l'id de type string en "number"
     const id = +this.route.snapshot.params['id'];
 
-    this.assignmentsService.getAssignement(id).subscribe((assignment) => {
+    this.assignmentsService.getAssignment(id).subscribe((assignment) => {
       if (!assignment) return;
       this.assignment = assignment;
       // Pour pré-remplir le formulaire
@@ -45,7 +45,7 @@ export class EditAssignmentComponent implements OnInit {
     this.assignment.nom = this.nomAssignment;
     this.assignment.dateDeRendu = this.dateDeRendu;
     this.assignmentsService
-      .updateAssignement(this.assignment)
+      .updateAssignment(this.assignment)
       .subscribe((message) => {
         console.log(message);
 

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -15,23 +17,29 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AuthGuard } from './shared/auth.guard';
+import { AuthService } from './shared/auth.service';
+import { HeaderComponent } from './header/header.component';
 
-import { AssignementsComponent } from './assignements/assignements.component';
-import { AssignmentDetailComponent } from './assignements/assignment-detail/assignment-detail.component';
+import { AssignmentsComponent } from './assignments/assignments.component';
+import { AssignmentDetailComponent } from './assignments/assignment-detail/assignment-detail.component';
 import { RenduDirective } from './shared/rendu.directive';
 import { FormsModule } from '@angular/forms';
-import { AddAssignmentComponent } from './assignements/add-assignment/add-assignment.component';
-import { EditAssignmentComponent } from './assignements/edit-assignment/edit-assignment.component';
+import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
+import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AssignementsComponent,
+    AssignmentsComponent,
     RenduDirective,
     AssignmentDetailComponent,
     AddAssignmentComponent,
-    EditAssignmentComponent
+    EditAssignmentComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +57,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatCheckboxModule,
     MatSlideToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
