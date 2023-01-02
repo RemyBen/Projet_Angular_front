@@ -9,6 +9,7 @@ import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
     { path: 'home', component: AssignmentsComponent },
+    { path: '', component: AssignmentsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'add', component: AddAssignmentComponent },
     { path: 'assignement/:id', component: AssignmentDetailComponent },

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ApplicationRef, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AssignmentsService } from './shared/assignments.service';
 import { AuthService } from './shared/auth.service';
@@ -41,7 +41,6 @@ export class AppComponent implements OnInit {
         this.assignmentService.peuplerBD()
             .subscribe(() => {
                 console.log("BD peuplée");
-
                 this.router.navigate(["/home"], { replaceUrl: true });
             });
     }
