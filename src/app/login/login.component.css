@@ -13,3 +13,7 @@ mat-card {
 mat-error#credentials {
     margin-top: 10px;
 }
+
+.signin-content {
+    background-color: rgb(172, 172, 172);
+}

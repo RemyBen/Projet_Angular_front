@@ -22,7 +22,7 @@ export class AuthService {
     ) { }
 
     logIn(user: User) {
-        if (user.username == 'user' && user.password == 'user') {
+        if (user.username == 'Utilisateur1' && user.password == 'user') {
             this.user = user;
             this.loggedIn.next(true);
             this.router.navigate(['/home']);
@@ -36,14 +36,5 @@ export class AuthService {
     logOut() {
         this.loggedIn.next(false);
         this.router.navigate(['/home']);
-    }
-
-    isAdmin() {
-        const isUserAdmin = new Promise(
-            (resolve, reject) => {
-                resolve(this.loggedIn);
-            }
-        )
-        return isUserAdmin;
     }
 }

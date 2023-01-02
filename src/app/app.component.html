@@ -1,16 +1,12 @@
-<div class="container">
-
-    <div>
-        <h1>
-            <nav><a routerLink="/home">{{title}}</a></nav>
-        </h1>
-
-        
-        <button mat-flat-button color="primary" (click)="peuplerBD()">Peupler BD</button>
-
+<mat-toolbar class="container">
+    <span class="title" routerLink="/home">{{title}}</span>
+    <div class="menu">
+        <button class="button" id="peuplerBtn" mat-flat-button (click)="peuplerBD()">Peupler BD</button>
+        <button class="button" id="ajouterBtn" mat-flat-button routerLink="/add">Ajouter un devoir</button>
+        <button class="button" *ngIf="isLoggedIn">Connecté en tant que {{ user }}</button>
+        <button class="button" id="loginBtn" mat-flat-button (click)="onLogin()" *ngIf="!isLoggedIn">Connexion</button>
+        <button class="button" id="logoutBtn" mat-flat-button (click)="onLogout()"
+            *ngIf="isLoggedIn">Déconnexion</button>
     </div>
-    <button class="loginBtn" mat-flat-button color="accent" (click)="onLogin()" *ngIf="!isLoggedIn">Connexion</button>
-    <button class="loginBtn" mat-flat-button color="accent" (click)="onLogout()" *ngIf="isLoggedIn">Déconnexion</button>
-    <p *ngIf="isLoggedIn">{{ user }}</p>
-</div>
+</mat-toolbar>
 <router-outlet></router-outlet>

@@ -1,10 +1,53 @@
 .container {
+    overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-  }
+    background-color: #243868;
+    margin-bottom: 20px;
+}
 
-.loginBtn {
-    justify-content: end;
-    margin-right: 20px;
+.menu {
+    float: right;
+}
+
+.title {
+    float: left;
+    font-size: 25px;
+    color: #FFFFFF;
+    background-color: #243868;
+}
+
+.button {
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-right: 10px;
+    background-color: #243868;
+}
+
+.button#loginBtn {
+    background-color: rgba(41, 177, 82, 0.812);
+}
+.button#loginBtn:hover {
+    background-color: rgba(41, 177, 82, 0.452);
+}
+
+.button#ajouterBtn {
+    background-color: rgba(41, 111, 177, 0.812);
+}
+.button#ajouterBtn:hover {
+    background-color: rgba(41, 111, 177, 0.452);
+}
+
+.button#peuplerBtn {
+    background-color: rgba(27, 73, 116, 0.812);
+}
+.button#peuplerBtn:hover {
+    background-color: rgba(27, 73, 116, 0.452);
+}
+
+.button#logoutBtn {
+    background-color: rgba(203, 47, 60, 0.812);
+}
+.button#logoutBtn:hover {
+    background-color: rgba(203, 47, 60, 0.452);
 }
