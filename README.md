@@ -1,27 +1,14 @@
-# AssignmentApp
+# App de gestion de devoirs à rendre
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+L'application tourne sur Heroku à cette adresse: https://projet-angular-front.herokuapp.com/
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Les points forts de notre projet:
+- Le projet est hebergé en ligne
+- On a utilisé plusieurs composants Angular materials comme le "mat-toolbar" pour le menu ou le "mat-card" pour le formulaire de connexion
+- L'application a un menu "userfriendly"
+- L'utilisateur peut se connecter via le bouton connexion qui redirige vers un formulaire de conenxion
+- Le formulaire de connexion est optimisé avec les messages d'erreur adéquat, les credentials de connexion sont écrit en dur. Les codes fonctionnants: id: **Utilisateur1** mdp: **user**
+- Pour éditer ou supprimer un devoir l'utilisateur doit se connecter, s'il ne l'est pas il est redirigé vers la page de connexion
+- Lorsqu'un utilisateur est connecté, un message avec son identifiant apparait. De plus le bouton Connexion se transforme en Deconnexion
+- Un utilisateur connecté peut se déconnecté et ne pourra plus éditer ou supprimer un devoir
+- On peut peupler la base avec 1000 devoirs de test grâce au bouton "Peupler BD" utilisant un *forkJoin*
