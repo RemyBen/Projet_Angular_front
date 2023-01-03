@@ -1,7 +1,7 @@
 <main class="container">
-    <p>Nb total d'assignements :  {{totalDocs}} </p>
+    <p>Nb total d'assignments :  {{totalDocs}} </p>
     <p>Nb total de page :  {{totalPages}} </p>
-    <p>Nb assignements par page :  <input type="range" min=1 max=100 value=10 (change)="getAssignments()"[(ngModel)]="limit"> {{ limit}}</p>
+    <p>Nb assignments par page :  <input type="range" min=1 max=100 value=10 (change)="getAssignments()"[(ngModel)]="limit"> {{ limit}}</p>
     <div class="paganisationBtn">
          <button mat-raised-button color="primary" (click)="premierePage()" [disabled]="page===1">Première</button> &nbsp;
          <button mat-raised-button color="primary" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Précédent </button>&nbsp;
