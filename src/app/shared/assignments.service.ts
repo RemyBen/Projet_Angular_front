@@ -12,11 +12,15 @@ export class AssignmentsService {
     constructor(private http: HttpClient) { }
 
 
-    // url = 'http://localhost:8010/api/assignments';
-    url = 'https://projet-angular-back.herokuapp.com/api/assignments';
+    url = 'http://localhost:8010/api/assignments';
+    //url = 'https://projet-angular-back.herokuapp.com/api/assignments';
 
     getAssignments(): Observable<Assignment[]> {
         return this.http.get<Assignment[]>(this.url);
+    }
+
+    getAssignmentsPagine(page:number,limit:number): Observable<any> {
+        return this.http.get<any>(this.url + '?page=' + page + '&limit=' + limit);
     }
 
     addAssignment(assignement: Assignment): Observable<any> {

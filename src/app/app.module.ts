@@ -19,7 +19,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
-
+import { MatTableModule } from '@angular/material/table';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AssignmentDetailComponent } from './assignments/assignment-detail/assignment-detail.component';
 import { RenduDirective } from './shared/rendu.directive';
@@ -57,7 +57,8 @@ import { LoginComponent } from './login/login.component';
     MatSlideToggleModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
