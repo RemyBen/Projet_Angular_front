@@ -15,6 +15,10 @@ export class AssignmentsComponent implements OnInit, AfterViewInit {
   ajoutActive = false;
   nomDevoir: string = '';
   dateDeRendu!: Date;
+  rendu!: boolean;
+  auteur!: string;
+  note!: number;
+  remarque!: string;
   assignmentSelectionne!: Assignment;
   formVisible = false;
 
@@ -28,7 +32,7 @@ export class AssignmentsComponent implements OnInit, AfterViewInit {
   nextPage: number=0;
   // pour l'affichage en table
 
-  displayedColumns: string[] = ['id', 'nom', 'dateDeRendu', 'rendu'];
+  displayedColumns: string[] = ['id', 'nom','auteur','matiere','note','remarque', 'dateDeRendu', 'rendu',];
 
 
     assignements: Assignment[] = [];
