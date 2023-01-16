@@ -2,6 +2,19 @@
 
 L'application tourne sur Heroku à cette adresse: https://projet-angular-front.herokuapp.com/
 
+Pour lancer le projet : 
+
+- Cloner le projet
+- Ouvrir un terminal
+- Se rendre dans le repertoire Projet_Angular_back
+- Lancer la commande "npm install" pour installer les dépendances
+- Lancer la commande "npm run start" pour lancer le serveur
+- Ouvrir un autre terminal
+- Se rendre dans le repertoire Projet_Angular_front
+- Lancer la commande "npm install" pour installer les dépendances
+- Lancer la commande "ng serve" pour lancer la page web
+
+
 Les points forts de notre projet:
 - Le projet est hebergé en ligne
 - On a utilisé plusieurs composants Angular materials comme le "mat-toolbar" pour le menu ou le "mat-card" pour le formulaire de connexion
@@ -21,5 +34,8 @@ Les points forts de notre projet:
     Chaque bouton se rendre inutilisable si celui si ne peut pas être cliquable ( ex : le bouton première page n'est pas cliquable lorsque l'on se trouve deja sur celle-ci)
 - Chaque manipulation de bouton / Slider envoie une requete au serveur qui effectue instantanement la requete et la modifie pour un affichage immédiat 
 - Les assignments sont affiché linéairement et dans une table angular material 
-- Il y a un recup du nombre total d'assignments et le nombre total de page qui se modifie en fonction du nombre d'assignments que l'on souhaite afficher
-                    
+- Il y a un recap du nombre total d'assignments et le nombre total de page qui se modifie en fonction du nombre d'assignments que l'on souhaite afficher
+- Il y a un bouton "Ajouter un devoir" qui permet d'ajouter un devoir via un formulaire
+- Ajout des nouveaux assignments dans la base de données
+- On y retrouve l'auteur,la matière, la note et une remarque sur le devoir
+- Lorsque l'on ajoute un nouveau devoir celui ci est ajouté dans la base de données et est affiché dans la liste des assignments
