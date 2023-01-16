@@ -1,73 +1,28 @@
-<form
-  class="form"
-  ngForm
-  (submit)="onSubmit(); assignementForm.reset()"
-  #assignementForm
->
-  <mat-form-field>
-    <input
-      matInput
-      [(ngModel)]="nomDevoir"
-      name="nom"
-      placeholder="Nom du devoir"
-      required
-    />
-  </mat-form-field>
-  <p>{{ nomDevoir }}</p>
-  <mat-form-field>
-    <input
-      matInput
-      [(ngModel)]="auteur"
-      name="auteur"
-      placeholder="Nom du l'élève"
-      required
-    />
-  </mat-form-field>
-  <p>{{ auteur }}</p>
+<h2 class="title">Ajout d'un devoir</h2>
+<form class="form" ngForm (submit)="onSubmit(); assignementForm.reset()" #assignementForm>
+    <mat-form-field>
+        <input matInput [(ngModel)]="nomDevoir" name="nom" placeholder="Nom du devoir" required />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="auteur" name="auteur" placeholder="Nom du l'élève" required />
+    </mat-form-field>
 
-  <mat-form-field>
-    <input
-      matInput
-      [(ngModel)]="matiere"
-      name="matiere"
-      placeholder="Matière"
-      required
-    />
-  </mat-form-field>
-  <p>{{ matiere }}</p>
-  <mat-form-field>
-    <input
-      matInput
-      [(ngModel)]="remarque"
-      name="remarque"
-      placeholder="Remarque"
-      required
-    />
-  </mat-form-field>
-  <p>{{ remarque }}</p>
+    <mat-form-field>
+        <input matInput [(ngModel)]="matiere" name="matiere" placeholder="Matière" required />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="remarque" name="remarque" placeholder="Remarque" required />
+    </mat-form-field>
 
-  <mat-form-field>
-    <input
-      matInput
-      [(ngModel)]="note"
-      name="note"
-      placeholder="Note"
-      required
-    />
-  </mat-form-field>
-  <p>{{ note }}</p>
+    <mat-form-field>
+        <input matInput [(ngModel)]="note" name="note" placeholder="Note" required type="number" max="20"/>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <input
-      matInput
-      [matDatepicker]="picker"
-      placeholder="Date de rendu"
-      [(ngModel)]="dateDeRendu"
-      name="date"
-      required
-    />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <button mat-stroked-button color="primary">Ajouter un devoir</button>
+    <mat-form-field appearance="fill">
+        <input matInput [matDatepicker]="picker" placeholder="Date de rendu" [(ngModel)]="dateDeRendu" name="date"
+            required />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button class="ajouter" mat-stroked-button>Ajouter un devoir</button>
 </form>

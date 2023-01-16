@@ -1,5 +1,31 @@
-#bottom {
+.bottom {
+    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
+}
+
+.rendu {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.edit {
+    background-color: #24386825;
+    color: #243868;
+    font-size: 17px;
+    margin-right: 40px;
+}
+
+.edit:hover {
+    background-color: #2438684f;
+}
+
+.delete {
+    background-color: #ff000d25;
+    color: #ff000d;
+    font-size: 17px;
+}
+
+.delete:hover {
+    background-color: #ff000d52;
 }

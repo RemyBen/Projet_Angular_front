@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
     title = 'Application de gestion de devoir à rendre';
     user: String;
     isLoggedIn: boolean;
+    isPeuplerBD: boolean;
 
     constructor(private authService: AuthService, private router: Router, private assignmentService: AssignmentsService) {
         this.authService.isLoggedIn.subscribe(value => {
@@ -40,7 +41,8 @@ export class AppComponent implements OnInit {
     peuplerBD() {
         this.assignmentService.peuplerBD()
             .subscribe(() => {
-                console.log("BD peuplée");
+                alert("Base de données peuplée !");
+                location.reload();
                 this.router.navigate(["/home"], { replaceUrl: true });
             });
     }

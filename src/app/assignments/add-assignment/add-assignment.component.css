@@ -1,5 +1,26 @@
+.title {
+    text-align: center;
+    font-size: 30px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
     margin: 5px;
+}
+
+.ajouter {
+    background-color: #24386825;
+    color: #243868;
+    font-size: 17px;
+    width: 200px;
+    align-self: center;
+}
+
+.ajouter:hover {
+    background-color: #2438684f;
+}
+
+.mat-form-field {
+    margin-top: 15px;
 }

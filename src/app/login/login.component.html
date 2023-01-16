@@ -4,14 +4,14 @@
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <mat-card-title>Connexion</mat-card-title>
           <mat-form-field class="full-width-input">
-            <input matInput placeholder="Identifiant" formControlName="username" required>
+            <input class ="input" matInput placeholder="Identifiant" formControlName="username" required>
             <mat-error *ngIf="isFieldInvalid('username')">Identifiant requis</mat-error>
           </mat-form-field>
           <mat-form-field class="full-width-input">
-            <input matInput type="password" placeholder="Mot de passe" formControlName="password" required>
+            <input class ="input" matInput type="password" placeholder="Mot de passe" formControlName="password" required>
             <mat-error *ngIf="isFieldInvalid('username')">Mot de passe requis</mat-error>
           </mat-form-field>
-          <button mat-raised-button color="primary" type="submit">Se connecter</button>
+          <button class="submit" mat-raised-button color="primary" type="submit">Se connecter</button>
           <mat-error id="credentials" *ngIf="wrongCredentials">Identifiant ou mot de passe incorrect</mat-error>
         </form>
       </mat-card-content>

@@ -25,17 +25,24 @@ Les points forts de notre projet:
 - Lorsqu'un utilisateur est connecté, un message avec son identifiant apparait. De plus le bouton Connexion se transforme en Deconnexion
 - Un utilisateur connecté peut se déconnecté et ne pourra plus éditer ou supprimer un devoir
 - On peut peupler la base avec 1000 devoirs de test grâce au bouton "Peupler BD" utilisant un *forkJoin*
+- L'utilisateur peut ajouter un devoir via un formulaire
+- Lorsque l'on ajoute un nouveau devoir celui ci est ajouté dans la base de données et est affiché dans la liste des devoirs
+
+- Il y a un recap du nombre total d'assignments et le nombre total de page qui se modifie en fonction du nombre d'assignments que l'on souhaite afficher
 - Il est possible de choisir via un Slider le nombre de d'assignments par page ( de 1 à 100 )
 - Il y a 4 boutons :
-     - Première :  qui permet de venir sur la premiere page directement
-     - Précédent : qui permet de revenir sur le page précédente
-     - Suivante : qui permet d'allais a la page suivante
-     - Dernière : qui permet de se rendre a la dernière page directement
-    Chaque bouton se rendre inutilisable si celui si ne peut pas être cliquable ( ex : le bouton première page n'est pas cliquable lorsque l'on se trouve deja sur celle-ci)
+     - Première :  qui permet de venir directement sur la premiere page
+     - Précédent : qui permet de revenir sur la page précédente
+     - Suivante : qui permet d'aller à la page suivante
+     - Dernière : qui permet de se rendre directement à la dernière page 
+     Chaque boutons sont actifs que si c'est possible ( ex : le bouton première page n'est pas actif si on se trouve deja sur celle-ci)
 - Chaque manipulation de bouton / Slider envoie une requete au serveur qui effectue instantanement la requete et la modifie pour un affichage immédiat 
-- Les assignments sont affiché linéairement et dans une table angular material 
-- Il y a un recap du nombre total d'assignments et le nombre total de page qui se modifie en fonction du nombre d'assignments que l'on souhaite afficher
-- Il y a un bouton "Ajouter un devoir" qui permet d'ajouter un devoir via un formulaire
-- Ajout des nouveaux assignments dans la base de données
-- On y retrouve l'auteur,la matière, la note et une remarque sur le devoir
-- Lorsque l'on ajoute un nouveau devoir celui ci est ajouté dans la base de données et est affiché dans la liste des assignments
+- Les assignments sont affichés dans une table angular material récapitulant les devoirs. On y retrouve:
+    - L'id du devoir
+    - Son nom
+    - L'auteur
+    - La matière
+    - La note
+    - Une remarque
+    - La date de rendu
+    - S'il a été rendu ou non

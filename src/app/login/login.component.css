@@ -17,3 +17,31 @@ mat-error#credentials {
 .signin-content {
     background-color: rgb(172, 172, 172);
 }
+
+.submit {
+    background-color: #24386825;
+    color: #243868;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.submit:hover {
+    background-color: #2438684f;
+}
+
+.input {
+    font-size: 18px;
+}
+
+mat-card-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+mat-error {
+    font-size: 14px;
+}
+
+mat-form-field {
+    margin-top: 10px;
+}
